@@ -34,3 +34,9 @@
 
 -referrence site : www.bxgs.co.kr
 /baexang_front/
+
+-------------------
+04/25
+1.슬라이더 pagenation 디자인 완료
+2. best art section 제목 완료
+3.

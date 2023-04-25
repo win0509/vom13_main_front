@@ -20,10 +20,7 @@ function visualSlider() {
      observer: true,
      observeParents: true,
      watchSlidesProgress: true,
-     // navigation: {
-     //     nextEl: ".visual .swiper-button-next",
-     //     prevEl: ".visual .swiper-button-prev",
-     // },
+  
 
      pagination: {
        el: ".landing .swiper-pagination",
@@ -33,24 +30,19 @@ function visualSlider() {
           $(".landing .swiper-slide").each(function() {
               bulletArray.push($(this).find('span').html());
           });  
-          console.log(bulletArray[index + 1]);
-        }
+        //   console.log(bulletArray[index + 1]);
+        return `
+          <div class="${className} main-slider-bullet">
+            <span>0${index + 1}</span>
+            <em>${bulletArray[index + 1]}</em>
+          </div>
+        `
+        },
      },
-     // pagination: {
-     //     el: ".visual .swiper-pagination",
-     //     clickable: true,
-     //     renderBullet: function (index, className) {
-     //         var bulletArray = [];
-     //         $(".visual .swiper-slide").each(function() {
-     //             bulletArray.push($(this).find('h2').html());
-     //         });  
-     //         return '<div class="'+className+'">'+'<span>'+'0'+(index+1)+'</span>'+'<strong>'+bulletArray[index+1]+'</strong></div>'+'</div>';
-     //     },
-     // },
-     // autoplay: {
-     //     delay: 3000,
-     //     disableOnInteraction:false
-     // },
+     autoplay: {
+         delay: 3000,
+         disableOnInteraction:false
+     },
      on: {
          init : function () {
              $('.landing-slider').addClass('load-init');
