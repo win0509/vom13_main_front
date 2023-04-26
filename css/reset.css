@@ -14,7 +14,8 @@
 --el-wide: 2rem;
 --el-medium:1.75rem;
 --el-small: 0.75rem;
---el-main:3rem
+--el-main:3rem;
+--el-cont:7.5rem;
 }
 
 /* Resrt CSS */
@@ -44,6 +45,8 @@ em, strong, i, b{
 button, input,textarea{
  border-radius: 0;
  background: #fff;
+ border: 0;
+ outline: 0;
 }
 img{
  display: block;

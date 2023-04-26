@@ -36,7 +36,18 @@
 /baexang_front/
 
 -------------------
+04/24
+
+
 04/25
 1.슬라이더 pagenation 디자인 완료
 2. best art section 제목 완료
-3.
+3.best art 사진 슬라이더 완료
+4.best art  사진 내부 클릭 요소 작성 중
+
+04/25
+1.헤더 hide 효과 완료
+2.best art 호버 효과 완료
+3.best art aos 프레임워크 적용 완료
+4.best art section 완료
+5.md art section 탭 기능 준비

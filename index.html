@@ -8,16 +8,20 @@
  <link rel="shortcut icon" href="/baexang_front/images/icon/favicon.ico">
  <title>백상 갤러리</title>
 
+
  <!-- Swiper Plugin CSS -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+ <!-- AOS -->
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
  <!-- Reset CSS -->
- <link rel="stylesheet" href="/baexang_front/css/reset.css">
+ <link rel="stylesheet" href="/baexang_front/css/reset.css?ver=20230426">
  <!-- Common CSS -->
- <link rel="stylesheet" href="/baexang_front/css/common.css">
+ <link rel="stylesheet" href="/baexang_front/css/common.css?ver=20230426">
   <!-- Animation CSS -->
-  <link rel="stylesheet" href="/baexang_front/css/animation.css">
+  <link rel="stylesheet" href="/baexang_front/css/animation.css?ver=20230426">
  <!-- Main CSS -->
- <link rel="stylesheet" href="/baexang_front/css/main.css">
+ <link rel="stylesheet" href="/baexang_front/css/main.css?ver=20230426">
 </head>
 
 <body>
@@ -50,10 +54,8 @@
   <main id="contents">
    <!-- Slider Landing Section -->
    <section class="landing">
-    <div class="landing-slider">
-      <!-- Additional required wrapper -->
-       <div class="swiper-wrapper">
-        <!-- Slides -->
+    <div class="landing-slider">  
+       <div class="swiper-wrapper">    
         <div class="swiper-slide">
          <div class="bg-wrap">
           <div class="slide-txt">
@@ -82,28 +84,25 @@
          </div>
         </div>
       
-      
-       
       </div>
       <div class="swiper-pagination"></div>
      </div>
-
-  
    </section>
 
-   <section class="best-art section">
+   <!-- Best Art Section -->
+   <section class="best-art section" data-aos="fade-up" data-aos-offset="300"
+   data-aos-delay="10" data-aos-duration="1000" data-aos-once="true">
     <div class="container">
       <div class="title-wrapper">
         <p class="title-desc">백상에서 가장 인기있는 작품을 소개합니다.</p>
         <h2 class="section-title">BEST ART</h2>
       </div>
 
-      <div class="best-image-wrapper">
+      <div class="best-image-wrapper" data-aos="fade-up" data-aos-offset="200"
+      data-aos-delay="20" data-aos-duration="1200"data-aos-once="true" >
         <!-- Slider main container -->
-          <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
+          <div class="swiper" >         
+            <div class="swiper-wrapper" >             
               <div class="swiper-slide">
                 <div class="best-image">
                   <img src="/baexang_front/images/item_images/best-1.jpg" alt="Best Item">
@@ -118,31 +117,125 @@
                     </div>
                   </div>
                 </div>
+                <div class="best-info">
+                  <h2 class="item-title">아름다운 랑그루아 다리</h2>
+                  <p class="item-by">빈센트 반 고흐</p>
+                  <em class="item-size">30.0cm x 30.0cm</em>
+                  <strong class="item-price">38,200<span>원</span></strong>
+                </div>
               </div>
               <div class="swiper-slide">
                 <div class="best-image">
                   <img src="/baexang_front/images/item_images/best-2.jpg" alt="Best Item">
+                  <div class="view-more-box">
+                    <div class="more-btn">
+                      <a href="#">
+                        <svg height="45" width="160">
+                          <rect height="45" width="160"/>
+                        </svg>
+                        <span>View More</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="best-info">
+                  <h2 class="item-title">키스</h2>
+                  <p class="item-by">구스타프 클립트</p>
+                  <em class="item-size">30.0cm x 30.0cm</em>
+                  <strong class="item-price">36,500<span>원</span></strong>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="best-image">
                   <img src="/baexang_front/images/item_images/best-3.png" alt="Best Item">
+                  <div class="view-more-box">
+                    <div class="more-btn">
+                      <a href="#">
+                        <svg height="45" width="160">
+                          <rect height="45" width="160"/>
+                        </svg>
+                        <span>View More</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="best-info">
+                  <h2 class="item-title">앙티브의 아침</h2>
+                  <p class="item-by">클로드 모네</p>
+                  <em class="item-size">30.0cm x 30.0cm</em>
+                  <strong class="item-price">35,700<span>원</span></strong>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="best-image">
                   <img src="/baexang_front/images/item_images/best-4.png" alt="Best Item">
+                  <div class="view-more-box">
+                    <div class="more-btn">
+                      <a href="#">
+                        <svg height="45" width="160">
+                          <rect height="45" width="160"/>
+                        </svg>
+                        <span>View More</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="best-info">
+                  <h2 class="item-title">아테제 호수</h2>
+                  <p class="item-by">구스타프 클립트</p>
+                  <em class="item-size">30.0cm x 30.0cm</em>
+                  <strong class="item-price">42,400<span>원</span></strong>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="best-image">
                   <img src="/baexang_front/images/item_images/best-5.png" alt="Best Item">
+                  <div class="view-more-box">
+                    <div class="more-btn">
+                      <a href="#">
+                        <svg height="45" width="160">
+                          <rect height="45" width="160"/>
+                        </svg>
+                        <span>View More</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="best-info">
+                  <h2 class="item-title">지베르니 봄의 효과</h2>
+                  <p class="item-by">클로드 모네</p>
+                  <em class="item-size">30.0cm x 30.0cm</em>
+                  <strong class="item-price">36,500<span>원</span></strong>
                 </div>
               </div>
-              
-            </div>
+            </div> 
+            <div class="swiper-pagination"></div>
           </div>
       </div>
+    </div>
+   </section>
+
+   <!-- Pick Art Section -->
+   <section class="pick section">
+    <div class="container">
+      <div class="title-wrapper">
+        <p class="title-desc">백상 큐레이터가 선정한 추천 작품을 만나보세요.</p>
+        <h2 class="section-title">MD PICK</h2>
+      </div>
+
+      <div class="pick-tab-wrapper">
+        <div class="pick-tab-btns">
+          <button class="pick-tab-btn on">그림작품</button>
+          <button class="pick-tab-btn">사진작품</button>
+        </div>
+        <div class="pick-tab-panels">
+          <div class="pick-tab-panel on"></div>
+          <div class="pick-tab-panel"></div>
+        </div>
+      </div>
+
+
+
     </div>
    </section>
   </main>
@@ -154,11 +247,16 @@
 
 <!-- Swiper Plugin -->
 <script src="	https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <!-- Custom jQuery -->
-<script src="/baexang_front/js/ui/customjq.js"></script>
+<script src="/baexang_front/js/ui/customjq.js?ver=20230426"></script>
 <!-- Custom Javascript -->
- <script src="/baexang_front/js/ui/customjs.js"></script>
+ <script src="/baexang_front/js/ui/customjs.js?ver=20230426"></script>
 
+ <script>
+  AOS.init();
+ </script>
 </body>
 </html>

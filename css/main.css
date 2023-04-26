@@ -4,7 +4,7 @@ header{
  background: #fff;
  width: 100%;
  z-index: 100;
- box-shadow: 1px 1px 5px #efefef;
+ box-shadow: .0625rem .0625rem .3125rem #efefef;
  transition: all .4s;
 }
 header .container{
@@ -15,7 +15,7 @@ header .container{
  padding-bottom: var(--el-medium);
 }
 header .logo{
- width: 7.8125rem;
+ width: 125px;
 }
 header .logo img{
  width: 100%;
@@ -82,23 +82,23 @@ header ul{
  padding: var(--el-main);
 }
 .landing .slide-txt p{
- font-size: 1.5rem;
+ font-size: 24px;
  font-family: var(--ff-en);
  line-height: var(--el-wide);
  margin-bottom: var(--el-medium);
  text-transform: uppercase;
- transform: translateY(40px);
+ transform: translateY(2.5rem);
  opacity: 0;
 
 }
 .landing .slide-txt span{
- font-size: 3.75rem;
+ font-size: 60px;
  font-weight: 600;
  text-transform: uppercase;
  font-family: var(--ff-en);
- line-height: 4.5rem;
+ line-height: 72px;
  display: block;
- transform: translateY(40px);
+ transform: translateY(2.5rem);
  opacity: 0;
 }
 
@@ -130,7 +130,7 @@ header ul{
 
 .landing .swiper-pagination .swiper-pagination-bullet{
  background: #fff;
- padding: 2rem 4rem;
+ padding: 32px 64px;
  border-radius: 0;
  margin: 0;
  display: flex;
@@ -139,8 +139,8 @@ header ul{
  height: auto;
  align-items: flex-start;
  opacity: 1;
- border-right: 1px solid #ddd;
- border-bottom: 1px solid #ddd;
+ border-right: .0625rem solid #ddd;
+ border-bottom: .0625rem solid #ddd;
 }
 .landing .swiper-pagination .swiper-pagination-bullet span,
 .landing .swiper-pagination .swiper-pagination-bullet em{
@@ -160,7 +160,7 @@ header ul{
 
 /* Best Items Style */
 .best-art .best-image-wrapper{
- padding: 7.5rem 0;
+ padding: var(--el-cont) 0;
  position: relative;
  overflow: hidden;
 }
@@ -170,7 +170,7 @@ header ul{
 }
 .best-art .swiper-slide .best-image{
  width: 100%;
- height: 450px;
+ height: 28.125rem;
  overflow: hidden;
  display: flex;
  align-items: center;
@@ -184,6 +184,127 @@ header ul{
 
 .best-art .swiper-slide .view-more-box{
  position: absolute;
- top: 0;
- left: 0;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -30%) rotateY(180deg);
+ opacity: 0;
+ visibility: hidden;
+ transition: all .6s;
+ transition-delay: .2s;
+ background: rgba(255, 255, 255, 0.8);
+ width: 80%;
+ height: 80%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.best-art .swiper-slide .best-image:hover .view-more-box{
+ opacity: 1;
+ visibility: visible;
+ transform: translate(-50%, -50%) rotateY(0); 
+}
+
+.swiper-pagination-bullet{
+ background: #999;
+}
+.swiper-pagination-bullet-active{
+ background: #333;
+} 
+
+.best-art .best-info{
+ width: 100%;
+ height: auto;
+ padding: var(--el-medium) 0;
+ display: flex;
+ flex-direction: column;
+}
+
+.best-art .best-info .item-title{
+ font-family: var(--ff-kr-serif);
+ font-size: 1.5rem;
+ font-weight: 600;
+ line-height: 1.875rem;
+}
+
+.best-art .best-info .item-by{
+ color: var(--color-pt);
+ margin-top: var(--el-small);
+ font-family: var(--ff-kr-serif);
+ line-height: 1.8rem;
+}
+.best-art .best-info .item-size{
+ color: #999;
+ margin-bottom: var(--el-small);
+}
+.best-art .best-info .item-price{
+ color: #333;
+ font-size: 2rem;
+ font-weight: 600;
+ font-family: var(--ff-kr-serif);
+}
+.best-art .best-info .item-price span{
+ font-size: 1.25rem;
+ font-weight: 400;
+ font-family: var(--ff-kr-serif);
+}
+
+/* MD Pick Section Style */
+.pick{
+ background: url('/baexang_front/images/pick-bg.jpg') no-repeat center center;
+ background-size: cover;
+}
+.pick .pick-tab-wrapper{
+ width: 100%;
+ height: auto;
+ padding: 0 6.25rem;
+}
+.pick .pick-tab-btns{
+ width: 100%;
+ height: auto;
+ margin: 3.125rem 0;
+ display: flex;
+ justify-content: center;
+ column-gap: 1.125rem;
+}
+.pick .pick-tab-btn{
+ font-size: 1.125rem;
+ color: #999;
+}
+
+.pick .pick-tab-btn.on{
+ color: #333;
+}
+
+.pick .pick-tab-btn:first-child{
+ padding-right: 1.125rem;
+ position: relative;
+}
+.pick .pick-tab-btn:first-child::after{
+ content: '';
+ position: absolute;
+ width: 1px;
+ height: 60%;
+ right: 0;
+ top: 50%;
+ transform: translateY(-50%);
+ background: #ddd;
+}
+
+.pick .pick-tab-panel{
+ display: none;
+
+}
+.pick .pick-tab-panel.on{
+ display: block;
+}
+.pick .pick-tab-panel:nth-child(1){
+ width: 100%;
+ height: 100px;
+ background: #ccc;
+}
+.pick .pick-tab-panel:nth-child(2){
+ width: 100%;
+ height: 100px;
+ background: #aaa;
 }
