@@ -73,6 +73,42 @@ function visualSlider() {
 $('.landing-slider').removeClass('load-init');
 });
 }
+visualSlider();
 
-visualSlider()
-});
+
+/*-------- FITTING MD PICK IMAGE RATIO --------*/
+function fitImageRatio(el1, el2, elv1, elv2) {
+    const mdImageWidth = $(el1).width();
+    const panelWidth = $(el2).width();
+    $(el1).height(mdImageWidth * elv1);
+    $(el2).height(panelWidth * elv2);
+  }
+ 
+ 
+  $(window).on("resize", function () {
+    fitImageRatio(
+      ".pick-tab-panel.on .panel-img",
+      ".pick-tab-panel.on .panel-desc",
+      0.8,
+      0.4
+    );
+  });
+  $(".pick-tab-btn").on("click", function () {
+    fitImageRatio(
+      ".pick-tab-panel.on .panel-img",
+      ".pick-tab-panel.on .panel-desc",
+      0.8,
+      0.4
+    );
+  });
+  fitImageRatio(
+    ".pick-tab-panel.on .panel-img",
+    ".pick-tab-panel.on .panel-desc",
+    0.8,
+    0.4
+  );
+ });
+ 
+ 
+
+
