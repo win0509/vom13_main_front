@@ -1,12 +1,15 @@
 $(function(){
- console.log('jQuery Loaded!');
+//  console.log('jQuery Loaded!');
  // 헤더 높이만큼 패딩 적용
  const headerHeight = $("header").outerHeight();
  // console.log(headerHeight);
- $('.landing').css(
-  'padding',
-  `${headerHeight}px var(--el-main) var(--el-main)`
- );
+ $('.landing').css('padding-top', `${headerHeight}px`);
+  // `${headerHeight}px var(--el-main) var(--el-main)`;
+
+  $(window).on("resize", function(){
+    const headerHeight = $("header").outerHeight();
+    $('.landing').css('padding-top', `${headerHeight}px`);
+  });
 
  // 메인 랜딩 슬라이더 
  /*===== VISUAL SLIDER FUNCTION ===== */

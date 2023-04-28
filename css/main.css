@@ -71,8 +71,9 @@ header ul li a:hover{
  opacity: 1;
  visibility: visible;
 }
-.mobile-menus.on{
+.moblie-overlay.on .mobile-menus{
  left: 0;
+ transition-delay: .3s;
 }
 
 .mobile-menus .menu-top{
@@ -117,6 +118,11 @@ header ul li a:hover{
 /* Slider CSS */
 .landing{
  height: 100vh;
+}
+.landing .container{
+ height: 100%;
+ max-width: none;
+ padding-bottom: var(--el-main);
 }
 .landing .landing-slider{
  overflow: hidden;
