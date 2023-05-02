@@ -85,6 +85,23 @@
    -webkit-line-clamp: 2;
   }
 
+  /* New Art Section */
+  .new-art .new-art-text{
+    height: 16vh;
+  }
+  .new-art .new-art-text em{
+    -webkit-line-clamp: 2;
+  }
+  .new-art .new-art-title{
+    width: 90%;
+  
+  }
+  .new-art .new-art-title h3{
+    font-size: 1.2rem;
+  }
+  .new-art .slider-nav-wrapper{
+    display: none;
+  }
 
 } /* end */
 
@@ -98,6 +115,26 @@
   /* Common Style */
   .section{
    padding: 3rem 0;
+  }
+
+  /* Common Content Box  Padding */
+  .content-wrapper{
+    padding: 3.75rem 0;
+  }
+
+  /* Common Button Style */
+  .more-btn a{
+    width: 125px;
+    height: 35px;
+    font-size: 0.625rem;
+  }
+  .more-btn a svg{
+    width: 125px;
+    height: 35px;
+  }
+  .more-btn svg rect{
+    width: 125px;
+    height: 35px;
   }
   
   /* Header Style */
@@ -151,6 +188,13 @@
  .pick .pick-tab-panel .panel-txt em{
   -webkit-line-clamp: 3;
  }
+
+   /* New Art Section */
+  .new-art .new-art-text{
+    height: 14vh;
+  }
+
+
 
  } /* end */
 

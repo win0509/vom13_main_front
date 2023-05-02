@@ -71,7 +71,7 @@ spaceBetween: 15,
     slidesPerView: 1,  //보이는 슬라이드 갯수
     slidesPerGroup: 1, //하나의 페이지네이션에 묶이는 슬라이드 갯수
   },
-  786: {//768이하
+  786: {//786이하
     slidesPerView: 2,  //브라우저가 1024보다 클 때
     slidesPerGroup: 2,
   },
@@ -87,24 +87,30 @@ spaceBetween: 15,
 //------------ NEW ART SLIDE------------------
 const newArtSwiper = new Swiper('.new-art-slider-wrapper .swiper', {
   slidesPerView : 3,
-  spaceBetween: 15,
+  spaceBetween: 20,
   
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
 
-  //  breakpoints: {
+   breakpoints: {
           
-  //   480: { //480이하
-  //     slidesPerView: 1,  //보이는 슬라이드 갯수
-  //     slidesPerGroup: 1, //하나의 페이지네이션에 묶이는 슬라이드 갯수
-  //   },
-  //   786: {//768이하
-  //     slidesPerView: 2,  //브라우저가 1024보다 클 때
-  //     slidesPerGroup: 2,
-  //   },
-  //   1400: { //1400이하
-  //     slidesPerView: 3,  //브라우저가 1024보다 클 때
-  //     slidesPerGroup: 3,
-  //   },
-  // },
+    480: { //480이하
+      slidesPerView: 1,  
+      slidesPerGroup: 1,
+      spaceBetween: 0, 
+    },
+    786: {//786이하
+      slidesPerView: 2,  
+      slidesPerGroup: 2,
+      spaceBetween: 10,
+    },
+  },
   
   });
 

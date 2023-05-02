@@ -20,6 +20,10 @@
  
 }
 
+.content-wrapper{
+ padding: var(--el-cont) 0;
+}
+
 
 /* Section Title Style */
 .title-wrapper{
