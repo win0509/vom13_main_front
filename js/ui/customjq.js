@@ -127,6 +127,29 @@ function fit2ImageRatio(el1, el2, elv1, elv2) {
       fit1ImageRatio('.new-art-image', 1.4);
     });
 
+
+     /*-------- FITTING REVIEW IMAGE RATIO --------*/
+     fit1ImageRatio('.review-image', 0.8);
+    $(window).on('resize', function(){
+      fit1ImageRatio('.review-image', 0.8);
+    });
+
+    /*--------Go To Top Style --------*/
+    $(window).on('scroll', function(){
+      const sct = $(window).scrollTop();
+      if(sct > 100){
+        $('.to-top').css('display', 'flex');
+      }else{
+        $('.to-top').css('display', 'none');
+      }
+    });
+
+    $('.to-top').on('click', function(){
+      $('html,body').animate({scrollTop: 0}, 'fast');
+    });
+
+
+
  });
  
  

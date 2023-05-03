@@ -137,3 +137,21 @@ function onTabs(i){
    onTabs(idx)
   });   
  });
+
+
+
+ //Direct Gallery Text Effect
+ const dgLetters = document.querySelectorAll('.direct-gallery-inside span');
+ dgLetters.forEach((lt, i)=> {
+  const delayIndex = i + 8;
+  if( delayIndex < 10){
+    lt.style.animationDelay = `0.${delayIndex}s`;
+  }else{
+    lt.style.animationDelay = `${ delayIndex / 10}s`;
+    // const strIndex = String(i);
+    // const strArr = [...strIndex];
+    // console.log(strArr[0])
+    // lt.style.animationDelay = `${strArr[0]}.${strArr[1]}s`;
+  }
+
+ });
