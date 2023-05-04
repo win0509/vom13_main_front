@@ -2,8 +2,10 @@
 
 //------------ HEADER HIDE AND SHOW ------------------
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+setTimeout(() => {
 let prevScrollpos = window.pageYOffset;
 const header = document.querySelector('header');
+
 
 window.addEventListener('scroll', function(){
   const currentScrollPos = window.pageYOffset;
@@ -11,7 +13,7 @@ window.addEventListener('scroll', function(){
     header.classList.remove('top');
     if(prevScrollpos > currentScrollPos){
       //헤더 나타남
-      header.style.top = 0
+      header.style.top = 0;
      
     }else{
       //헤더 사라짐
@@ -54,8 +56,12 @@ if(
   }
 });
 
-
+},300); //setTimeout end
 //------------ BEST ITEMS SLIDE------------------
+const isSwiper = document.querySelectorAll('.swiper-wrapper');
+if(isSwiper.length > 0){
+
+
 const bestArtSwiper = new Swiper('.best-image-wrapper .swiper', {
 slidesPerView : 4,
 spaceBetween: 15,
@@ -114,6 +120,7 @@ const newArtSwiper = new Swiper('.new-art-slider-wrapper .swiper', {
   
   });
 
+};
 //---------------- MD PICK TABS ---------------------
 const pickBtns = document.querySelectorAll('.pick-tab-btn');
 const pickPanels = document.querySelectorAll('.pick-tab-panel');
@@ -153,5 +160,11 @@ function onTabs(i){
     // console.log(strArr[0])
     // lt.style.animationDelay = `${strArr[0]}.${strArr[1]}s`;
   }
+});
+ 
+// ---------AOS Plugin Initiate-------
+  AOS.init({
+    duration:1200,
+  });
 
- });
+

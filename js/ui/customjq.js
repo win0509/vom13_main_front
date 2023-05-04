@@ -76,7 +76,12 @@ function visualSlider() {
 $('.landing-slider').removeClass('load-init');
 });
 }
-visualSlider();
+
+const isSwiper = $('.swiper-wrapper');
+if(isSwiper.length > 0){
+  visualSlider();
+}
+
 
 
 /*-------- FITTING MD PICK IMAGE RATIO --------*/
