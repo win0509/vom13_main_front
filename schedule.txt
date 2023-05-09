@@ -1,8 +1,8 @@
 - 시스템 요구사항
-1. frontend와 backend 분리(MVC:model view control 패턴)
+1. frontend와 backend 분리(MVC 패턴)
 2. database : endpoint 경로로 접근(API)
-3. method : post, get, patch, delete
-4. endpoint : 확장자를 제외한 경로로만 작성(restAPI)
+3. method : post, get, patch, delete//
+4. endpoint : 확장자를 제외한 경로로만 작성(restAPI)//
 5. frontend : html, css, javascript(jquery)
 6. backend : php
 7. database : mariahDB
@@ -19,12 +19,12 @@
 9. 상세페이지
 10. 서브페이지 작성
 11. 별점 평가
-12. 댓글 기능 +
-13. 게시판 +
+12. 댓글 기능//
+13. 게시판//
 
-- 오류 사항 보고 
-1. 탭 기능 오류: 요소 가로 대비 세로 길이 동적 조정 시 탭 실행 후 조정이 안되는 사항
---해결 : 탭 클릭 시 길이 조정 함수 적용(혜지언니가 해결)
+- 오류 사항 보고
+1. 탭 기능 오류 : 요소 가로 대비 세로 길이 동적 조정시 탭 실행 후 조정이 안되는 사항
+ -- 해결 : 탭 클릭 시 길이 조정 함수 적용
 
 - 결과 보고
 1. 주요 페이지 프로토타입
@@ -33,31 +33,5 @@
 4. data flow chart(endpoint 별)
 5. 테스트 보고서
 
-
--referrence site : www.bxgs.co.kr
-/baexang_front/
-
--------------------
-04/24
-
-
-04/25
-1.슬라이더 pagenation 디자인 완료
-2. best art section 제목 완료
-3.best art 사진 슬라이더 완료
-4.best art  사진 내부 클릭 요소 작성 중
-
-04/26
-1.헤더 hide 효과 완료
-2.best art 호버 효과 완료
-3.best art aos 프레임워크 적용 완료
-4.best art section 완료
-5.md art section 탭 기능 준비
-
-4/27
-1. md pick 탭 기능 완료
-2. 헤더 스크롤 시 좌우 옵셋 조정
-
-
--수정사항
-1.공통 버튼 
+- referrence site : www.bxgs.co.kr
+- /baexang_front/

@@ -1,53 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap');
 
 /* Main Root Style */
 :root{
- /* font-family */
---ff-kr-sans:'Noto Sans KR', sans-serif;
---ff-kr-serif:'Noto Serif KR', serif;
---ff-en:'EB Garamond', serif;
+  /* Font Family */
+  --ff-kr-sans: 'Noto Sans KR', sans-serif;
+  --ff-kr-serif: 'Noto Serif KR', serif;
+  --ff-en: 'EB Garamond', serif;
 
-/* Color */
---color-fs: #211e1f;
---color-pt: #c9ab81;
+  /* Color */
+  --color-fs: #211e1f;
+  --color-pt: #c9ab81;
 
---el-wide: 2rem;
---el-medium:1.75rem;
---el-small: 0.75rem;
---el-main:3rem;
---el-cont:7.5rem;
+  --el-wide: 2rem;
+  --el-medium: 1.75rem;
+  --el-small: 0.75rem;
+  --el-main: 3rem;
+  --el-cont: 7.5rem;
 }
 
-/* Resrt CSS */
-html{
- scroll-behavior: smooth;
-}
-body{
- font-family: var(--ff-kr-sans);
- /* height: 8000px; */
-}
-*{
- margin: 0;
- padding: 0;
- box-sizing: border-box;}
-
-ol,ul{
- list-style: none;
-}
-a{
- text-decoration: none;
- color: #333;
-}
-em, strong, i, b{
- font-weight: normal;
- font-style: normal;
-}
-button, input,textarea{
- border-radius: 0;
- background: #fff;
- border: 0;
- outline: 0;
-}
-img{
- display: block;
-}
+/* Reset CSS */
+html{scroll-behavior: smooth;}
+body{font-family: var(--ff-kr-sans);}
+*{margin:0; padding:0; box-sizing:border-box;}
+ol, ul{list-style:none;}
+a{text-decoration: none; color:#333;}
+em, strong, i, b{font-weight:normal; font-style:normal;}
+button, input, textarea{border-radius:0; background:#fff; border:0; outline:0;}
+img{display:block;}
