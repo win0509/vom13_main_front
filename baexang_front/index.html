@@ -9,28 +9,14 @@
  <link rel="shortcut icon" href="/baexang_front/images/icon/favicon.ico">
  <title>백상 갤러리</title>
 
- <style>
-  .preloader{
-    position: fixed;
-    background: #fff;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index:9999;
-    top:0;
-    left:0;
-}
-.preloader img{
-    width: 25%;
-    
-}
- </style>
  <!-- Plugin CSS -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+ <style>
+  .preloader{position:fixed; background:#fff; width:100%; height:100vh; left:0; top:0; z-index:9999; display:flex; align-items: center; justify-content: center;}
+  .preloader img{width:25%;}
+ </style>
 </head>
 <body>
   <div class="wrapper">
@@ -200,7 +186,7 @@
                   </div>
                 </div>
               </div> 
-              <div class="swiper-pagination"></div>
+              <div class="best-swiper-pagination"></div>
             </div>
           </div>
         </div>
@@ -390,7 +376,7 @@
                 <img src="/baexang_front/images/icon/bu-slider-right.png" alt="Angle Right Icon">
               </div>
             </div>
-            <div class="swiper-pagination"></div>          
+            <div class="new-swiper-pagination"></div>          
           </div>
         </div>
       </section>
@@ -511,17 +497,14 @@
     </div>
   </div>
 
-  <div class="preloader js-preloader">
+  <!-- <div class="preloader js-preloader">
     <img src="/baexang_front/images/loader.gif" alt="">
-  </div>
+  </div> -->
 
   <script>
     const url = document.location.href;
-    // if(url === 'http://localhost/baexang_front/'){
-    //   location.href = 'http://localhost/baexang_front/index.html';
-    // }
-     if(url === 'http://dbtmdfl12.dothome.co.kr/baexang_front/'){
-        location.href = 'http://dbtmdfl12.dothome.co.kr/baexang_front/index.html'
+    if(url === 'http://dbtmdfl12.dothome.co.kr/baexang_front/' || url === 'http://dbtmdfl12.dothome.co.kr/baexang_front/'){
+      location.href = 'http://dbtmdfl12.dothome.co.kr/baexang_front/index.html';
     }
   </script>
   
@@ -531,10 +514,8 @@
   <!-- Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- <script src="/baexang_front/js/etc/jquery.preloadinator.min.js"></script> -->
 
-  <script src="/baexang_front/js/etc/jquery.preloadinator.min.js"></script>
   <script src="/baexang_front/js/etc/head-contents.js"></script>
-
-  
 </body>
 </html>

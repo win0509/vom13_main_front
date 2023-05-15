@@ -60,8 +60,9 @@ if (isSwiper.length > 0) {
 
     // If we need pagination
     pagination: {
-      el: ".swiper-pagination",
+      el: ".best-swiper-pagination",
       clickable: true,
+      type: "bullets",
     },
     breakpoints: {
       480: {
@@ -91,7 +92,7 @@ if (isSwiper.length > 0) {
       prevEl: ".swiper-button-prev",
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: ".new-swiper-pagination",
       clickable: true,
     },
     breakpoints: {

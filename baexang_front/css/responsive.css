@@ -38,9 +38,7 @@
   .review .review-image-content{padding:0.5rem;}
 
   /* Signup Page Style */
-  .sign .form-wrapper{
-    width: 65vw;
-  }
+  .sign .form-wrapper{width:65vw;}
 }
 
 @media screen and (max-width:786px){
@@ -91,16 +89,9 @@
   .footer ul.adr-tel{flex-direction: column; row-gap:var(--el-small);}
   .footer ul.adr-tel li:after{opacity:0;}
 
-/* Signup Page Style */
-.sign .form-wrapper{
-        width: 90vw;
-    }
+  /* Signup Page Style */
+  .sign .form-wrapper{width:90vw;}
 }
-
-
-
-
-
 
 @media screen and (max-width:480px){
   /* Common Style */
@@ -150,25 +141,12 @@
   .footer ul{margin-bottom:0.5rem;}
   .footer ul.adr-tel{row-gap:0.5rem;}
 
-/* Signup Page Style */
-.sign .form-wrapper{
-    width: 100%;
-    margin: 2rem auto 0;
-}
-.sign .form-wrapper input{
-    padding: 1.2rem;
-}
-.sign .form-wrapper input::placeholder{
-    font-size: 0.75rem;
-}
-.sign .form-wrapper form input[type='submit']{
-    font-size: 0.75rem;
-}
-.sign .form-wrapper .sign-msg em,
-.sign .form-wrapper .sign-msg a{
-    font-size: 0.75rem;
-}
-.sign .form-wrapper .sign-msg a{
-    padding: 0.75rem 1.8rem;
-}
+  /* Signup Page Style */
+  .sign .form-wrapper{width:100%; margin:2rem auto 0;}
+  .sign .form-wrapper input{padding:1.2rem;}
+  .sign .form-wrapper input::placeholder{font-size:0.75rem;}
+  .sign .form-wrapper form input[type="submit"]{font-size:0.75rem;}
+  .sign .form-wrapper .sign-msg em,
+  .sign .form-wrapper .sign-msg a{font-size:0.75rem;}
+  .sign .form-wrapper .sign-msg a{padding:0.75rem 1.8rem;}
 }

@@ -1,16 +1,14 @@
 $(function () {
   /* -- 헤더 높이만큼 페딩 적용 */
   setTimeout(() => {
-  const headerHeight = $("header").outerHeight();
-  $(".landing").css("padding-top", `${headerHeight}px`);
-  $('.sign-form').css("padding-top", `${headerHeight}px`);
-
-},300);
+    const headerHeight = $("header").outerHeight();
+    $(".landing").css("padding-top", `${headerHeight}px`);
+    $(".sign-form").css("padding-top", `${headerHeight}px`);
+  }, 300);
   $(window).on("resize", function () {
     const headerHeight = $("header").outerHeight();
     $(".landing").css("padding-top", `${headerHeight}px`);
-    $('.sign-form').css("padding-top", `${headerHeight}px`);
-
+    $(".sign-form").css("padding-top", `${headerHeight}px`);
   });
 
   // 메인 랜딩 슬라이더
@@ -144,14 +142,15 @@ $(function () {
   $(".to-top").on("click", function () {
     $("html,body").animate({ scrollTop: 0 }, "fast");
   });
-});
 
-
-
-$('.js-preloader').preloadinator({
-  minTime:1000,
-  animation:'fadeOut',
-
-  animationDuration: 400
-
+  /*-------- LOADER EFFECT --------*/
+  const isPreloader = $(".preloader");
+  if (isPreloader.length > 0) {
+    // (isPreloader !== null)
+    $(".js-preloader").preloadinator({
+      minTime: 1000,
+      animation: "fadeOut",
+      animationDuration: 400,
+    });
+  }
 });
