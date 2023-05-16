@@ -37,9 +37,10 @@ for (let i = 0; i < jsFileNames.length; i++) {
   document.body.insertAdjacentElement("beforeend", jsFile);
 }
 
-const include = document.createElement("script");
+const isLoginElmt = document.createElement("script");
 
-include.type = "text/javascript";
-include.src = `/baexang_front/js/etc/include.js?_v=${versionUpdate}`;
+isLoginElmt.type = "text/javascript";
+isLoginElmt.async = true;
+isLoginElmt.src = `/baexang_front/js/request/register/isLogin?_v=${versionUpdate}`;
 
 document.body.insertAdjacentElement("beforeend", include);
