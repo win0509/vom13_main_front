@@ -1,10 +1,13 @@
 var endPoints = {
   register: {
-    signup: "http://dbtmdfl12.dothome.co.kr/baexang_back/register/signup",
-    signin:"http://dbtmdfl12.dothome.co.kr/baexang_back/register/signin",
-    signout:"http://dbtmdfl12.dothome.co.kr/baexang_back/register/signout",
-    isSignin:"http://dbtmdfl12.dothome.co.kr/baexang_back/register/signin",
-    
+    signup:
+      "https://dbtmdfl12.dothome.co.kr/baexang_back/register/signup",
+    signin:
+      "https://dbtmdfl12.dothome.co.kr/baexang_back/register/signin",
+    signout:
+      "https://dbtmdfl12.dothome.co.kr/baexang_back/register/signout",
+    isSignin:
+      "https://dbtmdfl12.dothome.co.kr/baexang_back/register/is_signin",
   },
   admin: {},
   productPictures: {},

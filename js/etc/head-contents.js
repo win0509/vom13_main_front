@@ -1,4 +1,5 @@
-const versionUpdate = new Date().getTime();
+// const versionUpdate = new Date().getTime();
+const versionUpdate = 20230516;
 
 const pageURL = document.location.href;
 let pageName = "";
@@ -41,6 +42,6 @@ const isLoginElmt = document.createElement("script");
 
 isLoginElmt.type = "text/javascript";
 isLoginElmt.async = true;
-isLoginElmt.src = `/baexang_front/js/request/register/isLogin?_v=${versionUpdate}`;
+isLoginElmt.src = `/baexang_front/js/request/register/isLogin.js?_v=${versionUpdate}`;
 
-document.body.insertAdjacentElement("beforeend", include);
+document.head.insertAdjacentElement("beforeend", isLoginElmt);

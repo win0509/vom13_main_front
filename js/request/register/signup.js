@@ -1,18 +1,16 @@
-window.addEventListener('load', function(){
+window.addEventListener("load", function () {
   startSignup();
 });
 
-function startSignup(){
-const signup = document.querySelector('input[type="submit"]');
-const nameInput = document.querySelector(".name");
-const idInput = document.querySelector(".id");
-const emailInput = document.querySelector(".email");
-const pwdInput = document.querySelector(".pwd");
-const rpwdInput = document.querySelector(".rpwd");
-let check = false;
+function startSignup() {
+  const signup = document.querySelector('input[type="submit"]');
+  const nameInput = document.querySelector(".name");
+  const idInput = document.querySelector(".id");
+  const emailInput = document.querySelector(".email");
+  const pwdInput = document.querySelector(".pwd");
+  const rpwdInput = document.querySelector(".rpwd");
+  let check = false;
 
-// getScripts(scriptFiles, function () {
-  // console.log(endPoints);
   signup.addEventListener("click", () => {
     check = true;
     // 입력창 작성 체크
@@ -63,7 +61,6 @@ let check = false;
       const jsonData = JSON.stringify(plainFormData); // 변환된 데이터를 json 형식으로 변환
 
       postSignupDataAsJson(url, jsonData);
-      // console.log(jsonData);
     });
 
     async function postSignupDataAsJson(url, jsonString) {
@@ -81,7 +78,8 @@ let check = false;
         if (data.status) {
           const isLogin = confirm(`${data.msg}\n로그인 하시겠습니까?`);
           if (isLogin) {
-            location.href = "/baexang_front/pages/sign-in.html";
+            location.href =
+              "/baexang_front/pages/sign-in.html";
           } else {
             location.href = "/baexang_front/index.html";
           }
@@ -95,4 +93,3 @@ let check = false;
     }
   });
 }
-// });
