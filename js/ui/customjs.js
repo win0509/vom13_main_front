@@ -19,6 +19,9 @@ setTimeout(() => {
     }
   });
 
+
+
+
   /*-------- MOBILE MENU HIDE AND SHOW --------*/
   const mobileMenuIcon = document.querySelector(".menu-icon");
   const mobileOverlay = document.querySelector(".mobile-overlay");
@@ -49,7 +52,10 @@ setTimeout(() => {
       document.body.style.overflow = "auto";
     }
   });
-}, 500);
+}, 2000);
+
+
+
 
 /*-------- BEST ITEMS SLIDE --------*/
 const isSwiper = document.querySelectorAll(".swiper-wrapper");
@@ -83,6 +89,9 @@ if (isSwiper.length > 0) {
     },
   });
 
+
+
+
   /*-------- NEW ART SLIDE --------*/
   const newArtSwiper = new Swiper(".new-art-slider-wrapper .swiper", {
     slidesPerView: 3,
@@ -112,29 +121,62 @@ if (isSwiper.length > 0) {
   });
 }
 
+
+
+
 /*-------- MD PICK TBAS --------*/
 // 1. 요소 선택
+//pick 패널 요소
 const btns = document.querySelectorAll(".pick-tab-btn");
 const panels = document.querySelectorAll(".pick-tab-panel");
 
-// 2. 함수 정의
-function activeTabs(i) {
-  btns.forEach((btn) => {
-    btn.classList.remove("on");
+// admin 패널 요소
+const adminBtns = document.querySelectorAll(".admin-btns button");
+const adminPanels = document.querySelectorAll(".admin-panel");
+
+// 2.함수 정의
+
+function commonTabs(bts, pns){
+  function activeTabs(i) {
+    bts.forEach((btn) => {
+      btn.classList.remove("on");
+    });
+    pns.forEach((panel) => {
+      panel.classList.remove("on");
+    });
+    bts[i].classList.add("on");
+    pns[i].classList.add("on");
+  }
+  bts.forEach((btn, idx) => {
+    btn.addEventListener("click", () => {
+      activeTabs(idx);
+    });
   });
-  panels.forEach((panel) => {
-    panel.classList.remove("on");
-  });
-  btns[i].classList.add("on");
-  panels[i].classList.add("on");
 }
 
-// 3. 함수 호출
-btns.forEach((btn, idx) => {
-  btn.addEventListener("click", () => {
-    activeTabs(idx);
-  });
-});
+commonTabs(btns,panels); // pick 패널 실행
+commonTabs(adminBtns, adminPanels); //admin 패널 실행
+
+// function activeTabs(i) {
+//   btns.forEach((btn) => {
+//     btn.classList.remove("on");
+//   });
+//   panels.forEach((panel) => {
+//     panel.classList.remove("on");
+//   });
+//   btns[i].classList.add("on");
+//   panels[i].classList.add("on");
+// }
+
+// // 3. 함수 호출
+// btns.forEach((btn, idx) => {
+//   btn.addEventListener("click", () => {
+//     activeTabs(idx);
+//   });
+// });
+
+
+
 
 // Direct Gallery Text Effect
 const dgLetters = document.querySelectorAll(".direct-gallery-inside span");
@@ -181,21 +223,23 @@ function fitBrowerHeight(el1, el2) {
   }
  }
  
+ fitBrowerHeight(window, '.wrapper');
+
+ //모바일 버전 감지 후  PC 버전에서만 실행 시킴(계획)
+//  setTimeout(() => {
+//   fitBrowerHeight(window, '.wrapper');
+//  }, 300);
  
- setTimeout(() => {
-  fitBrowerHeight(window, '.wrapper');
- }, 300);
  
- 
- const delay = 200;
- let timer = null;
- $(window).on('resize', function () {
-  clearTimeout(timer);
-  timer = setTimeout(function () {
-    fitBrowerHeight(window, '.wrapper');
-    document.location.reload();
-  }, delay);
- });
+//  const delay = 200;
+//  let timer = null;
+//  $(window).on('resize', function () {
+//   clearTimeout(timer);
+//   timer = setTimeout(function () {
+//     fitBrowerHeight(window, '.wrapper');
+//     document.location.reload();
+//   }, delay);
+//  });
  
  
  
