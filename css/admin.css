@@ -85,3 +85,10 @@
     color: #fff;
     border-radius: .25rem;
 }
+
+.admin .admin-user-lists li.list-null{
+    padding: .5rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.875rem;
+}
