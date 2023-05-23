@@ -19,16 +19,16 @@ const getUserData = () => {
                 userLists.insertAdjacentHTML('beforeend', userList);    
             } else{
        
-            data.forEach((userInfo) => {
+            data.forEach((userInfo, i) => {
                 userList = `
                     <li class="list-contents">
-                        <form onsubmit="return false;">
+                        <form onsubmit="return false" class="update-form-${i}>
                             <span class="num">${userInfo.user_idx}</span>
                             <span class="id">${userInfo.user_id}</span>
-                            <span class="name"><input type="text" value="${userInfo.user_name}"></span>
-                            <span class="lvl"><input type="text" value="${userInfo.user_lvl}"></span>
+                            <span class="name"><input type="text" value="${userInfo.user_name}" name="user_name"></span>
+                            <span class="lvl"><input type="text" value="${userInfo.user_lvl}" name="user_lvl"></span>
                             <span class="update on"><input type="submit" value="수정"></span>
-                            <span class="delete"><input type="submit" value="삭제"></span>
+                            <span class="delete"><input type="button" value="삭제"></span>
                         </form>
                         
                 `;
@@ -39,6 +39,7 @@ const getUserData = () => {
 
 
             updateUserInfo(data);
+            deleteUser(data);
         }catch(error){
             console.error("Error", error);
         }
@@ -55,7 +56,53 @@ const updateUserInfo = (userInfo) => {
 
            const lvlInput = updateBtns[i].previousElementSibling.childNodes[0];
            const idx = userInfo[i].user_idx;
-           console.log(idx);
+           
+           if(!nameInput.value){
+            alert('수정할 이름을 입력해 주세요.');
+            nameInput.focus();
+            return;
+           }
+
+           if(!lvlInput.value){
+            alert('수정할 레벨을 입력해 주세요.');
+            lvlInput.focus();
+            return;
+           }
+
+           const url = endPoints.admin.updateUser + '/' + idx;
+           const form = document.querySelector(`.update-form-${i}`);
+          
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(form); // 폼에 입력한 데이터 저장
+                const plainFormData = Object.fromEntries(formData.entries()); // 저장된 데이터를 일반 문자열로 변환
+                const jsonData = JSON.stringify(plainFormData); // 변환된 데이터를 json 형식으로 변환
+        
+                putUpdateDataAsJson(url, jsonData);
+            });
+
+            const  putUpdateDataAsJson = async(url, jsonString) => {
+                const options = {
+                  method: 'PUT',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                  },
+                  body: jsonString,
+                };
+          
+                try {
+                  const data = await putRequest(url, options);
+                  alert(data.msg);
+                  location.reload();
+                } catch (error) {
+                  console.log('Error', error);
+                }
+            }
+            
         });
     });
-}
+};
+
+const deleteUser = (userInfo) => {};

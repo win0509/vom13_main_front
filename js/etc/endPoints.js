@@ -11,6 +11,7 @@ var endPoints = {
   },
   admin: {
     getUsers:`https://${domain}/baexang_back/admin/get_users`,
+    updateUser : `https://${domain}/baexang_back/admin/update_user`
   },
   productPictures: {},
   productDrawings: {},

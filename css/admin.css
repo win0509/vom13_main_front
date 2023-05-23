@@ -78,7 +78,8 @@
     padding: .5rem 0;
     width: 90%;
 }
-.admin .admin-user-lists li span input[type="submit"]{
+.admin .admin-user-lists li span input[type="submit"],
+.admin .admin-user-lists li span input[type="button"]{
     width: 70%;
     padding: .25rem;
     background: var(--color-pt);
