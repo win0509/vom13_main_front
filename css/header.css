@@ -25,10 +25,10 @@ header ul li a:hover{color:#111;}
 .mobile-menus ul li a:hover{color:var(--color-pt);}
 
 /* 로그인 및 로그아웃 시 디자인 변경 */
-header li.login-menu.logged-in{background:var(--color-pt); border:1px solid var(--color-point); padding:.5rem 1.5rem; transition:all .3s;}
+header li.login-menu.logged-in{background:var(--color-pt); border:1px solid var(--color-pt); padding:.5rem 1.5rem; transition:all .3s;}
 header li.login-menu.logged-in a{color:#fff; transition:all .3s; display:flex; column-gap:.5rem;}
 header li.login-menu.logged-in a span{padding-right:.5rem;position:relative; }
-header li.login-menu.logged-in a span:after{width:1px; height:50%; background:#fff; position:absolute; top:50%; transform:translateY(-50%); right:0; content:''; transition:all .3s;}
+header li.login-menu.logged-in a span:after{width:1px; height:50%; background:#fff; position:absolute; top:50%;   transform:translateY(-50%); right:0; content:''; transition:all .3s;}
 header li.login-menu.logged-in:hover{background:#fff;}
 header li.login-menu.logged-in:hover a{color:var(--color-pt);}
 header li.login-menu.logged-in:hover a span:after{background:var(--color-pt);}
@@ -53,6 +53,4 @@ header li.login-menu.logged-in:hover a span:after{background:var(--color-pt);}
 .mobile-menus li.login-menu.logged-in a span:after{width:1px; height:50%; background:#666; position:absolute; top:50%; transform:translateY(-50%); right:0; content:''; transition:all .3s;}
 .mobile-menus li.login-menu.logged-in:hover{background:#fff;}
 .mobile-menus li.login-menu.logged-in:hover a{color:var(--color-pt);}
-.mobile-menus li.login-menu.logged-in:hover a span:after{background:var(--color-pt);}
-
-
+.mobile-menus li.login-menu.logged-in:hover a span:after{background:var(--color-point);}

@@ -1,8 +1,12 @@
 /*-------- HEADER HIDE AND SHOW --------*/
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+
 setTimeout(() => {
+  // window.addEventListener('DOMContentLoaded', function () {
+  // function loadDom() {
   let prevScrollpos = window.pageYOffset;
   const header = document.querySelector("header");
+  // console.log(header);
 
   window.addEventListener("scroll", function () {
     const currentScrollPos = window.pageYOffset;
@@ -19,13 +23,11 @@ setTimeout(() => {
     }
   });
 
-
-
-
   /*-------- MOBILE MENU HIDE AND SHOW --------*/
   const mobileMenuIcon = document.querySelector(".menu-icon");
   const mobileOverlay = document.querySelector(".mobile-overlay");
   const mobileCloseIcon = document.querySelector(".close-icon");
+  // console.log(mobileMenuIcon);
   mobileMenuIcon.addEventListener("click", function (e) {
     e.preventDefault(); // default original effect prevented
     mobileOverlay.classList.add("on");
@@ -53,9 +55,7 @@ setTimeout(() => {
     }
   });
 }, 2000);
-
-
-
+// }
 
 /*-------- BEST ITEMS SLIDE --------*/
 const isSwiper = document.querySelectorAll(".swiper-wrapper");
@@ -89,9 +89,6 @@ if (isSwiper.length > 0) {
     },
   });
 
-
-
-
   /*-------- NEW ART SLIDE --------*/
   const newArtSwiper = new Swiper(".new-art-slider-wrapper .swiper", {
     slidesPerView: 3,
@@ -121,12 +118,9 @@ if (isSwiper.length > 0) {
   });
 }
 
-
-
-
 /*-------- MD PICK TBAS --------*/
 // 1. 요소 선택
-//pick 패널 요소
+// pick 패널 요소
 const btns = document.querySelectorAll(".pick-tab-btn");
 const panels = document.querySelectorAll(".pick-tab-panel");
 
@@ -134,9 +128,8 @@ const panels = document.querySelectorAll(".pick-tab-panel");
 const adminBtns = document.querySelectorAll(".admin-btns button");
 const adminPanels = document.querySelectorAll(".admin-panel");
 
-// 2.함수 정의
-
-function commonTabs(bts, pns){
+// 2. 함수 정의
+function commonTabs(bts, pns) {
   function activeTabs(i) {
     bts.forEach((btn) => {
       btn.classList.remove("on");
@@ -147,6 +140,8 @@ function commonTabs(bts, pns){
     bts[i].classList.add("on");
     pns[i].classList.add("on");
   }
+
+  // 3. 함수 호출
   bts.forEach((btn, idx) => {
     btn.addEventListener("click", () => {
       activeTabs(idx);
@@ -154,29 +149,8 @@ function commonTabs(bts, pns){
   });
 }
 
-commonTabs(btns,panels); // pick 패널 실행
-commonTabs(adminBtns, adminPanels); //admin 패널 실행
-
-// function activeTabs(i) {
-//   btns.forEach((btn) => {
-//     btn.classList.remove("on");
-//   });
-//   panels.forEach((panel) => {
-//     panel.classList.remove("on");
-//   });
-//   btns[i].classList.add("on");
-//   panels[i].classList.add("on");
-// }
-
-// // 3. 함수 호출
-// btns.forEach((btn, idx) => {
-//   btn.addEventListener("click", () => {
-//     activeTabs(idx);
-//   });
-// });
-
-
-
+commonTabs(btns, panels); // pick 패널 실행
+commonTabs(adminBtns, adminPanels); // admin 패널 실행
 
 // Direct Gallery Text Effect
 const dgLetters = document.querySelectorAll(".direct-gallery-inside span");
@@ -200,48 +174,54 @@ AOS.init({
   duration: 1200,
 });
 
-
 // 브라우저가 컨텐츠 내용 보다 크면 요소를 화면 위아래로 맞춤
 function fitBrowerHeight(el1, el2) {
   const windowHeight = $(el1).outerHeight();
   const wrapperHeight = $(el2).outerHeight();
- 
- 
+
   if (windowHeight > wrapperHeight) {
     //786 < 1023
     $(el2).css({
-      display: 'flex',
-      'flex-direction': 'column',
-      'justify-content': 'space-between',
-      height: '100vh',
+      display: "flex",
+      "flex-direction": "column",
+      "justify-content": "space-between",
+      height: "100vh",
     });
   } else {
     $(el2).css({
-      display: 'block',
-      height: 'auto',
+      display: "block",
+      height: "auto",
     });
   }
- }
- 
- fitBrowerHeight(window, '.wrapper');
+}
 
- //모바일 버전 감지 후  PC 버전에서만 실행 시킴(계획)
-//  setTimeout(() => {
-//   fitBrowerHeight(window, '.wrapper');
-//  }, 300);
- 
- 
-//  const delay = 200;
-//  let timer = null;
-//  $(window).on('resize', function () {
+fitBrowerHeight(window, ".wrapper");
+
+// 모바일 버전 감지 후 PC 버전에서만 실행 시킴(계획)
+// setTimeout(() => {
+//   fitBrowerHeight(window, ".wrapper");
+// }, 300);
+
+// const delay = 200;
+// let timer = null;
+// $(window).on("resize", function () {
 //   clearTimeout(timer);
 //   timer = setTimeout(function () {
-//     fitBrowerHeight(window, '.wrapper');
+//     fitBrowerHeight(window, ".wrapper");
 //     document.location.reload();
 //   }, delay);
-//  });
- 
- 
- 
- 
- 
+// });
+
+// ------ 이미지 미리보기 ------- //
+const imageFile = document.querySelector("#f_img");
+if (imageFile) {
+  imageFile.addEventListener("change", (e) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = function (e) {
+      const imagePreview = document.querySelector("#preview-img");
+      imagePreview.setAttribute("src", e.target.result);
+    };
+    fitBrowerHeight(window, ".wrapper");
+  });
+}

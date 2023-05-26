@@ -28,11 +28,11 @@
 
         <div class="admin-wrapper">
           <div class="admin-btns">
-            <button type="button" class="on">회원관리</button>
-            <button type="button">상품관리</button>
+            <button type="button">회원관리</button>
+            <button type="button" class="on">상품관리</button>
           </div>
           <div class="admin-panels">
-            <div class="admin-panel on">
+            <div class="admin-panel">
 
               <div class="admin-user-table">
                 <ul class="admin-user-lists">
@@ -45,17 +45,64 @@
                     <span class="update">수정</span>
                     <span class="delete">삭제</span>
                   </li>
+
                 </ul>
               </div>
 
             </div>
-            <div class="admin-panel"></div>
+            <div class="admin-panel on">
+
+              <form class="admin-insert-wrapper">
+                <div class="admin-short-txt">
+                  <div class="tb-select">
+                    <select name="pr_type">
+                      <option value="picture">사진작품</option>
+                      <option value="drawing">그림작품</option>
+                    </select>
+                  </div>
+                  <div class="title">
+                    <label for="title">작품명</label>
+                    <input type="text" id="title" placeholder="작품명" name="pr_ttl">
+                  </div>
+                  <div class="wt_en">
+                    <label for="wt_en">작품명</label>
+                    <input type="text" id="wt_en" placeholder="영문 작가명" name="pr_wt_en">
+                  </div>
+                  <div class="wt_kr">
+                    <label for="wt_kr">작품명</label>
+                    <input type="text" id="wt_kr" placeholder="한글 작가명" name="pr_wt_kr">
+                  </div>
+                  <div class="price">
+                    <label for="price">작품명</label>
+                    <input type="text" id="price" placeholder="가격" name="pr_pri">
+                  </div>
+                </div>
+                <div class="admin-img-desc">
+                  <div class="admin-desc">
+                    <label for="desc">작품설명</label>
+                    <textarea name="pr_desc" id="desc" placeholder="작품 설명을 입력해 주세요."></textarea>
+                  </div>
+                  <div class="admin-img">
+                    <div class="img-info">
+                      <label for="f_img">작품사진</label>
+                      <input type="file" id="f_img" name="pr_img">
+                    </div>
+                    <div class="img-preview">
+                      <img id="preview-img">
+                    </div>
+                  </div>
+                </div>
+                <div class="submit-btn">
+                  <input type="submit" value="입력하기">
+                </div>
+              </form>
+
+            </div>
           </div>
         </div>
       </div>
-
-        
     </section>
+
     <!-- Footer -->
     <div id="footer-wrapper"></div>
   </div>
@@ -68,5 +115,6 @@
   <script src="/baexang_front/js/etc/head-contents.js"></script>
   <script src="/baexang_front/js/request/register/checkAdminSignin.js"></script>
   <script src="/baexang_front/js/request/admin/controlUsers.js"></script>
+  <script src="/baexang_front/js/request/product/insertProduct.js"></script>
 </body>
 </html>
