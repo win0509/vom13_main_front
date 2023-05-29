@@ -54,7 +54,7 @@ setTimeout(() => {
       document.body.style.overflow = "auto";
     }
   });
-}, 2000);
+// }, 2000);
 // }
 
 /*-------- BEST ITEMS SLIDE --------*/
@@ -87,7 +87,9 @@ if (isSwiper.length > 0) {
         slidesPerGroup: 3,
       },
     },
+  
   });
+
 
   /*-------- NEW ART SLIDE --------*/
   const newArtSwiper = new Swiper(".new-art-slider-wrapper .swiper", {
@@ -117,6 +119,7 @@ if (isSwiper.length > 0) {
     },
   });
 }
+}, 2000);
 
 /*-------- MD PICK TBAS --------*/
 // 1. 요소 선택
