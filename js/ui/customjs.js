@@ -119,6 +119,12 @@ if (isSwiper.length > 0) {
     },
   });
 }
+
+/*----- AOS Plugin Initiate ----- */
+AOS.init({
+  duration: 1200,
+});
+
 }, 2000);
 
 /*-------- MD PICK TBAS --------*/
@@ -172,10 +178,7 @@ dgLetters.forEach((lt, i) => {
   }
 });
 
-/*----- AOS Plugin Initiate ----- */
-AOS.init({
-  duration: 1200,
-});
+
 
 // 브라우저가 컨텐츠 내용 보다 크면 요소를 화면 위아래로 맞춤
 function fitBrowerHeight(el1, el2) {

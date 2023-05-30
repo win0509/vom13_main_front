@@ -34,7 +34,12 @@
 .best-art .best-image-wrapper{position:relative; overflow:hidden;}
 .best-art .swiper-slide{width:25%;}
 .best-art .swiper-slide .best-image{width:100%; height:450px; overflow:hidden; display:flex; align-items: center; justify-content: center; position:relative;}
-.best-art .swiper-slide .best-image img{height:100%;}
+.best-art .swiper-slide .best-image img{height:100%; width: 100%;}
+/* 이미지가 박스와 비율이 다를 때 해결 방법
+1. 이미지를 미리 박스 비율에 맞춰 편집하여 적용한다.
+2. 박스에 선을 만들고 사진과의 간격을 둔 후 다른 이미지와 구분한다.
+3. 박스에 이미지를 CSS를 통해 적용하고, 박스 자체는 패딩만 높여준다. */
+
 
 .best-art .swiper-slide .view-more-box{position:absolute; top:50%; left:50%; background:rgba(255, 255, 255, 0.8); width:80%; height:80%; display:flex; align-items: center; justify-content: center; transform:translate(-50%, -30%) rotateY(180deg); opacity:0; visibility: hidden; transition:all .4s; transition-delay:.2s;}
 .best-art .swiper-slide .best-image:hover .view-more-box{opacity:1; visibility: visible; transform: translate(-50%, -50%) rotateY(0);}
