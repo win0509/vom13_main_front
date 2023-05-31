@@ -1,8 +1,8 @@
 // ========== 반복 사용 코드 : 한번만 실행 ==========//
 const scriptFiles = [
-  '/baexang_front/js/etc/include.js',
-  '/baexang_front/js/etc/endPoints.js',
-  '/baexang_front/js/etc/requestMethods.js',
+  "/baexang_front/js/etc/include.js",
+  "/baexang_front/js/etc/endPoints.js",
+  "/baexang_front/js/etc/requestMethods.js",
 ];
 
 // scriptFiles 배열 내의 주소를 헤더 내부에 위치시키는 함수
@@ -13,10 +13,10 @@ function loadScript(scripts) {
       // 배열 요소 분리
       return new Promise(function (resolve, reject) {
         // 각각의 배열 요소에 프로미스 적용
-        const elmt = document.createElement('script'); // script 태그 생성
+        const elmt = document.createElement("script"); // script 태그 생성
         elmt.async = true; // async 속성 추가
-        elmt.addEventListener('load', resolve); // 프로미스 실행 완료 됐을때 load 이벤트 실행
-        elmt.addEventListener('error', reject);
+        elmt.addEventListener("load", resolve); // 프로미스 실행 완료 됐을때 load 이벤트 실행
+        elmt.addEventListener("error", reject);
         elmt.src = script; // script 경로 추가 : scriptFiles 배열 각각의 요소
         document.head.appendChild(elmt); // head 태그 맨 아래 script 태그 추가
       });
@@ -26,11 +26,11 @@ function loadScript(scripts) {
 
 // 위의 프로미스 요소가 실생된 이후(then) 실행될 함수
 loadScript(scriptFiles).then(function () {
-  console.log(endPoints);
+  // console.log(endPoints);
   // console.log(domain);
   const isLoginUrl = endPoints.register.isSignin;
   // console.log(isLoginUrl);
-  window.addEventListener('load', () => {
+  window.addEventListener("load", () => {
     checkPostIsLogin(isLoginUrl, null);
   });
 });
@@ -38,10 +38,10 @@ loadScript(scriptFiles).then(function () {
 
 const checkPostIsLogin = async (url, jsonString) => {
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
     body: jsonString,
   };
@@ -51,16 +51,16 @@ const checkPostIsLogin = async (url, jsonString) => {
     changeHeaderByLogin(data);
     startLogout();
   } catch (error) {
-    console.log('error : ', error);
+    console.log("error : ", error);
   }
 };
 
 const changeHeaderByLogin = (userLoginData) => {
   console.log(userLoginData);
-  const infoWrappers = document.querySelectorAll('div.info');
+  const infoWrappers = document.querySelectorAll("div.info");
   infoWrappers.forEach((info) => {
-    let userLoginElmt = '';
-    if (userLoginData.userid === 'guest') {
+    let userLoginElmt = "";
+    if (userLoginData.userid === "guest") {
       userLoginElmt = `
         <ul>
           <li><a href="#">장바구니<em>0</em></a></li>
@@ -86,26 +86,26 @@ const changeHeaderByLogin = (userLoginData) => {
       `;
       }
     }
-    info.insertAdjacentHTML('beforeend', userLoginElmt); // 자바스크립트로 직접 만든 태그는 insertAdjacentElement를 사용하지만 문자열로 만들어진 태그는 insertAdjacentHTML을 사용한다
+    info.insertAdjacentHTML("beforeend", userLoginElmt); // 자바스크립트로 직접 만든 태그는 insertAdjacentElement를 사용하지만 문자열로 만들어진 태그는 insertAdjacentHTML을 사용한다
   });
 };
 
 const startLogout = () => {
-  const logoutBtns = document.querySelectorAll('.logged-in');
+  const logoutBtns = document.querySelectorAll(".logged-in");
   // console.log(endPoints);
   const logoutUrl = endPoints.register.signout;
 
   logoutBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener("click", (e) => {
       e.preventDefault();
 
       const requestGetLogout = async (url) => {
         try {
           const data = await getRequest(url);
-          alert('로그아웃 되었습니다!');
-          location.href = '/baexang_front/index.html';
+          alert("로그아웃 되었습니다!");
+          location.href = "/baexang_front/index.html";
         } catch (error) {
-          console.log('error : ', error);
+          console.log("error : ", error);
         }
       };
       requestGetLogout(logoutUrl);

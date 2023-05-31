@@ -71,8 +71,3 @@ const insertProductData = () => {
     }
   };
 };
-
-
-
-
-

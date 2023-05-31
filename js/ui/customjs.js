@@ -54,77 +54,74 @@ setTimeout(() => {
       document.body.style.overflow = "auto";
     }
   });
-// }, 2000);
-// }
+  // }, 2000);
+  // }
 
-/*-------- BEST ITEMS SLIDE --------*/
-const isSwiper = document.querySelectorAll(".swiper-wrapper");
-if (isSwiper.length > 0) {
-  const bestArtSwiper = new Swiper(".best-image-wrapper .swiper", {
-    slidesPerView: 4,
-    spaceBetween: 15,
+  /*-------- BEST ITEMS SLIDE --------*/
+  const isSwiper = document.querySelectorAll(".swiper-wrapper");
+  if (isSwiper.length > 0) {
+    const bestArtSwiper = new Swiper(".best-image-wrapper .swiper", {
+      slidesPerView: 4,
+      spaceBetween: 15,
 
-    // If we need pagination
-    pagination: {
-      el: ".best-swiper-pagination",
-      clickable: true,
-      type: "bullets",
-    },
-    breakpoints: {
-      480: {
-        // 480 이하
-        slidesPerView: 1, // 보이는 슬라이드 갯수
-        slidesPerGroup: 1, // 하나의 페이지네이션에 묶이는 슬라이드 갯수
+      // If we need pagination
+      pagination: {
+        el: ".best-swiper-pagination",
+        clickable: true,
+        type: "bullets",
       },
-      880: {
-        // 880 이하
-        slidesPerView: 2,
-        slidesPerGroup: 2,
+      breakpoints: {
+        480: {
+          // 480 이하
+          slidesPerView: 1, // 보이는 슬라이드 갯수
+          slidesPerGroup: 1, // 하나의 페이지네이션에 묶이는 슬라이드 갯수
+        },
+        880: {
+          // 880 이하
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+        1400: {
+          // 1400 이하
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+        },
       },
-      1400: {
-        // 1400 이하
-        slidesPerView: 3,
-        slidesPerGroup: 3,
+    });
+
+    /*-------- NEW ART SLIDE --------*/
+    const newArtSwiper = new Swiper(".new-art-slider-wrapper .swiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
-    },
-  
+      pagination: {
+        el: ".new-swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        480: {
+          // 480 이하
+          slidesPerView: 1, // 보이는 슬라이드 갯수
+          slidesPerGroup: 1, // 하나의 페이지네이션에 묶이는 슬라이드 갯수
+          spaceBetween: 0,
+        },
+        786: {
+          // 786 이하
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 10,
+        },
+      },
+    });
+  }
+
+  /*----- AOS Plugin Initiate ----- */
+  AOS.init({
+    duration: 1200,
   });
-
-
-  /*-------- NEW ART SLIDE --------*/
-  const newArtSwiper = new Swiper(".new-art-slider-wrapper .swiper", {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".new-swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      480: {
-        // 480 이하
-        slidesPerView: 1, // 보이는 슬라이드 갯수
-        slidesPerGroup: 1, // 하나의 페이지네이션에 묶이는 슬라이드 갯수
-        spaceBetween: 0,
-      },
-      786: {
-        // 786 이하
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 10,
-      },
-    },
-  });
-}
-
-/*----- AOS Plugin Initiate ----- */
-AOS.init({
-  duration: 1200,
-});
-
 }, 2000);
 
 /*-------- MD PICK TBAS --------*/
@@ -178,8 +175,6 @@ dgLetters.forEach((lt, i) => {
   }
 });
 
-
-
 // 브라우저가 컨텐츠 내용 보다 크면 요소를 화면 위아래로 맞춤
 function fitBrowerHeight(el1, el2) {
   const windowHeight = $(el1).outerHeight();
@@ -201,7 +196,9 @@ function fitBrowerHeight(el1, el2) {
   }
 }
 
-fitBrowerHeight(window, ".wrapper");
+setTimeout(() => {
+  fitBrowerHeight(window, ".wrapper");
+}, 2000);
 
 // 모바일 버전 감지 후 PC 버전에서만 실행 시킴(계획)
 // setTimeout(() => {

@@ -4,11 +4,13 @@ $(function () {
     const headerHeight = $("header").outerHeight();
     $(".landing").css("padding-top", `${headerHeight}px`);
     $(".sign-form").css("padding-top", `${headerHeight}px`);
+    $(".best .best-section").css("padding-top", `${headerHeight}px`);
   }, 300);
   $(window).on("resize", function () {
     const headerHeight = $("header").outerHeight();
     $(".landing").css("padding-top", `${headerHeight}px`);
     $(".sign-form").css("padding-top", `${headerHeight}px`);
+    $(".best .best-section").css("padding-top", `${headerHeight}px`);
   });
 
   // 메인 랜딩 슬라이더
@@ -82,7 +84,6 @@ $(function () {
   }
 
   /*-------- FITTING MD PICK IMAGE RATIO --------*/
- 
   function fit2ImageRatio(el1, el2, elv1, elv2) {
     const mdImageWidth = $(el1).width();
     const panelWidth = $(el2).width();
@@ -113,26 +114,33 @@ $(function () {
     0.4
   );
 
-
   /*-------- FITTING NEW ART IMAGE RATIO --------*/
   setTimeout(() => {
-  function fit1ImageRatio(el1, elv1) {
-    const fitElmtWidth = $(el1).width();
-    $(el1).height(fitElmtWidth * elv1);
-  }
+    function fit1ImageRatio(el1, elv1) {
+      const fitElmtWidth = $(el1).width();
+      $(el1).height(fitElmtWidth * elv1);
+    }
 
-  fit1ImageRatio(".new-art-image", 1.4);
-  $(window).on("resize", function () {
     fit1ImageRatio(".new-art-image", 1.4);
-  });
+    $(window).on("resize", function () {
+      fit1ImageRatio(".new-art-image", 1.4);
+    });
 
-
-  /*-------- FITTING REVIEW IMAGE RATIO --------*/
-  fit1ImageRatio(".review-image", 0.8);
-  $(window).on("resize", function () {
+    /*-------- FITTING REVIEW IMAGE RATIO --------*/
     fit1ImageRatio(".review-image", 0.8);
-  });
-},2000);
+    $(window).on("resize", function () {
+      fit1ImageRatio(".review-image", 0.8);
+    });
+
+    /*-------- FITTING BEST PAGE RATIO --------*/
+    fit1ImageRatio(".best .best-image img", 1);
+    $(window).on("resize", function () {
+      fit1ImageRatio(".best .best-image img", 1);
+    });
+
+    // const imageHeight = $(".best .best-image img").height();
+    // $(".view-more-box").height(imageHeight * 0.8);
+  }, 2000);
 
   /*-------- GO TO TOP --------*/
   $(window).on("scroll", function () {
