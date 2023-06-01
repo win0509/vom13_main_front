@@ -158,28 +158,28 @@
   .sign .form-wrapper .sign-msg a{padding:0.75rem 1.8rem;}
 
     /* Best Sub Page Style */
-  .best .best-list-wrapper{
+  .product .product-list-wrapper{
     margin: 2rem auto 0;
   }
-  .best .list-title h3{
+  .product .list-title h3{
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 2.5rem;
   }
-  .best .best-info{
+  .product .product-info{
     padding: var(--el-small);
   }
-  .best .best-info .item-title,
-  .best .best-info .item-price
+  .product .product-info .item-title,
+  .product .product-info .item-price
   {
     font-size: 1.2rem;
   }
-  .best .best-info .item-by{
+  .product .product-info .item-by{
     margin-top: 0;
   }
 }
 
 @media screen and (max-width:380px){
-  .best .best-content{width:100%; padding: .5rem;}
+  .product .product-content{width:100%; padding: .5rem;}
 }
 

@@ -4,13 +4,13 @@ $(function () {
     const headerHeight = $("header").outerHeight();
     $(".landing").css("padding-top", `${headerHeight}px`);
     $(".sign-form").css("padding-top", `${headerHeight}px`);
-    $(".best .best-section").css("padding-top", `${headerHeight}px`);
+    $(".product .product-section").css("padding-top", `${headerHeight}px`);
   }, 300);
   $(window).on("resize", function () {
     const headerHeight = $("header").outerHeight();
     $(".landing").css("padding-top", `${headerHeight}px`);
     $(".sign-form").css("padding-top", `${headerHeight}px`);
-    $(".best .best-section").css("padding-top", `${headerHeight}px`);
+    $(".product .product-section").css("padding-top", `${headerHeight}px`);
   });
 
   // 메인 랜딩 슬라이더
@@ -133,9 +133,9 @@ $(function () {
     });
 
     /*-------- FITTING BEST PAGE RATIO --------*/
-    fit1ImageRatio(".best .best-image img", 1);
+    fit1ImageRatio(".product .product-image img", 1);
     $(window).on("resize", function () {
-      fit1ImageRatio(".best .best-image img", 1);
+      fit1ImageRatio(".product .product-image img", 1);
     });
 
     // const imageHeight = $(".best .best-image img").height();
