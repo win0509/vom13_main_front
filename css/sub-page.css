@@ -3,7 +3,7 @@
 /* Best Page Style */
 .product .product-section .container{padding-top:var(--el-main);}
 .product .product-list-wrapper{width:100%; height:auto; margin:5rem auto 0;}
-.product .product-list-wrapper .list-title{border-bottom:1px solid var(--color-pt);}
+.product .list-title{border-bottom:1px solid var(--color-pt);}
 .product .list-title h3{font-size:2.5rem; color:#333; font-family:var(--ff-en); font-weight:700; line-height:3.125rem; letter-spacing:0;}
 
 .product .product-lists{width:100%; height:auto; padding:1.5rem 0; display:flex; flex-wrap:wrap; gap:1rem;}
@@ -21,6 +21,13 @@
 .product .product-info .item-price{font-size:2rem; font-weight:500; color:#333;}
 .product .product-info .item-price span{font-size:1.25rem; font-weight:400; font-family:var(--ff-kr-serif);}
 
+
+/* Product MD PICK Slider Style */
+.product .product-preview{
+      width: 100%;
+      height: auto;
+      margin-top: 3rem;
+}
 .product .more-lists{
       width: 100%;
       height: auto;

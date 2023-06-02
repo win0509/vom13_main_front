@@ -16,37 +16,53 @@ const pageString = subPageParam.get('page'); // 파라미터 중 특정 키의 �
 
 let titleStr = "";
 let sortKey = "";
-if(pageString === "best"){
+let cateKey = "cate=all";
+let subTit = "";
+ 
+if(pageString === "best" || pageString ==="new") {
   sortKey  = `sort=${pageString}&`;
-  titleStr = 'best';
-}else if(pageString === "new"){
-  sortKey  = `sort=${pageString}&`;
-  titleStr = 'new';
-}else{
-  sortKey = "";
-}
-
-let cateKey = "";
-if(pageString === "pp"){
+  titleStr = pageString;
+  subTit = pageString === "best" ?  '가장 인기  있는 작품을 만나보세요.' : '백상의 새로운 작품을 만나보세요.';
+}else if(pageString === "pp" || pageString === "dp"){
   cateKey  = `cate=${pageString}`;
-  titleStr = 'picture';
-}else if(pageString === "dp"){
-  cateKey  = `cate=${pageString}`;
-  titleStr = 'drawing';
+  titleStr = pageString == "pp" ? "picture" : "drawing";
+  subTit = pageString === "pp" ? "백상이 준비한 사진작품 입니다." : "백상이 준비한 그림작품 입니다.";
+ }
 
-}else{
-  cateKey = "cate=all";
-}
+// else{
+//   cateKey = "cate=all";
+// }
+
+
+// if(pageString === "pp"){
+//   cateKey  = `cate=${pageString}`;
+//   titleStr = 'picture';
+// }else if(pageString === "dp"){
+//   cateKey  = `cate=${pageString}`;
+//   titleStr = 'drawing';
+
+// }else{
+//   cateKey = "cate=all";
+// }
 
 const subPageTit = document.querySelector('.product .section-title');
 const listTit =  document.querySelector('.product-list-wrapper h3');
+const subDesc = document.querySelector('.product .title-desc');
+subDesc.textContent = subTit;
 subPageTit.textContent = titleStr.toUpperCase() + ' ART';
 listTit.textContent = titleStr.toUpperCase() + ' ART';
 
 async function getSubPageData() {
-  const getPageUrl =
-    endPoints.product.getProducts + `?${sortKey}${cateKey}`;
-
+  const getPageUrl  = endPoints.product.getProducts + `?${sortKey}${cateKey}`;
+  // let getPageUrl = '';
+  // const checkUrl = endPoints.product.getProducts + `?${sortKey}${cateKey}`;
+  // const lastChr = checkUrl.charAt(checkUrl.length - 1);// 마지막 문자열 읽기
+  // if(lastChr === '&'){
+  //   getPageUrl = checkUrl.slice(0, -1); //마지막 문자열 자르기
+  // }else{
+  //   getPageUrl = checkUrl;
+  // }
+  // console.log(getPageUrl);
   try {
     const data = await getRequest(getPageUrl);
     const productLists = document.querySelector(".product-lists");
