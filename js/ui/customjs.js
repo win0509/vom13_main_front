@@ -117,33 +117,33 @@ setTimeout(() => {
       },
     });
 
-      /*-------- PRODUCT PAGE SLIDE --------*/
-      const productSwiper = new Swiper(".product .swiper", {
-        slidesPerView: 1,
-        // spaceBetween: 20,
-        // navigation: {
-        //   nextEl: ".swiper-button-next",
-        //   prevEl: ".swiper-button-prev",
-        // },
-        // pagination: {
-        //   el: ".new-swiper-pagination",
-        //   clickable: true,
-        // },
-        // breakpoints: {
-        //   480: {
-        //     // 480 이하
-        //     slidesPerView: 1, // 보이는 슬라이드 갯수
-        //     slidesPerGroup: 1, // 하나의 페이지네이션에 묶이는 슬라이드 갯수
-        //     spaceBetween: 0,
-        //   },
-        //   786: {
-        //     // 786 이하
-        //     slidesPerView: 2,
-        //     slidesPerGroup: 2,
-        //     spaceBetween: 10,
-        //   },
-        // },
-      });
+    /*-------- PRODUCT PAGE SLIDE --------*/
+    const contentsNumber = $(".swiper-contents .text-contents");
+    const slideCount = $(".swiper-contents .swiper-slide").length;
+    const num = $(".swiper-text-wrapper .num");
+    console.log(slideCount);
+    const productSwiper = new Swiper(".product .swiper", {
+      slidesPerView: 1,
+      loop: true,
+      on: {
+        init: function () {
+          $(".swiper-text-wrapper .text-contents:first-of-type").addClass(
+            "active"
+          );
+
+          num.text($(this)[0].activeIndex + " / " + slideCount);
+        },
+        slideChange: () => {
+          contentsNumber.removeClass("active");
+          contentsNumber.eq(productSwiper.realIndex).addClass("active");
+          num.text(productSwiper.realIndex + 1 + " / " + slideCount);
+        },
+      },
+      navigation: {
+        nextEl: ".preview-swiper .btn_next",
+        prevEl: ".preview-swiper .btn_prev",
+      },
+    });
   }
 
   /*----- AOS Plugin Initiate ----- */

@@ -2,15 +2,14 @@ $(function () {
   /* -- 헤더 높이만큼 페딩 적용 */
   setTimeout(() => {
     const headerHeight = $("header").outerHeight();
-    $(".landing").css("padding-top", `${headerHeight}px`);
-    $(".sign-form").css("padding-top", `${headerHeight}px`);
-    $(".product .product-section").css("padding-top", `${headerHeight}px`);
+    $(".landing, .sign-form, .product .product-section, .detail .section ").css("padding-top", `${headerHeight}px`);
+  
   }, 300);
   $(window).on("resize", function () {
     const headerHeight = $("header").outerHeight();
-    $(".landing").css("padding-top", `${headerHeight}px`);
-    $(".sign-form").css("padding-top", `${headerHeight}px`);
-    $(".product .product-section").css("padding-top", `${headerHeight}px`);
+    $(".landing, .sign-form, .product .product-section, .detail .section ").css("padding-top", `${headerHeight}px`);
+  
+
   });
 
   // 메인 랜딩 슬라이더
@@ -132,11 +131,23 @@ $(function () {
       fit1ImageRatio(".review-image", 0.8);
     });
 
-    /*-------- FITTING BEST PAGE RATIO --------*/
+    /*-------- FITTING PRODUCT SLIDER IMAGE RATIO --------*/
     fit1ImageRatio(".product .product-image img", 1);
     $(window).on("resize", function () {
       fit1ImageRatio(".product .product-image img", 1);
     });
+
+    /*-------- FITTING BEST PAGE RATIO --------*/
+    fit1ImageRatio(".product .swiper", 0.8);
+    $(window).on("resize", function () {
+      fit1ImageRatio(".product .swiper", 0.8);
+    });
+
+      /*-------- FITTING DETAIL PAGE HANG IMAGE RATIO --------*/
+      fit1ImageRatio(".detail .image-frame", 0.7);
+      $(window).on("resize", function () {
+        fit1ImageRatio(".detail .image-frame", 0.7);
+      });
 
     // const imageHeight = $(".best .best-image img").height();
     // $(".view-more-box").height(imageHeight * 0.8);
@@ -154,6 +165,16 @@ $(function () {
 
   $(".to-top").on("click", function () {
     $("html,body").animate({ scrollTop: 0 }, "fast");
+  });
+
+  /*-------- DETAIL PAGE CHANGE BACKGROUND --------*/
+  $(".item-thumb-image span").on('click', function () {
+    $(".item-thumb-image span").removeClass('active');
+    $(this).addClass("active");
+
+    const imageUrl = $(this).find('img').attr('src');
+    $('.gallery-bg').attr('style', `background-image: url(${imageUrl})`);
+    // console.log(imageUrl);
   });
 
   /*-------- LOADER EFFECT --------*/

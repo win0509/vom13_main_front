@@ -6,6 +6,26 @@
 .product .list-title{border-bottom:1px solid var(--color-pt);}
 .product .list-title h3{font-size:2.5rem; color:#333; font-family:var(--ff-en); font-weight:700; line-height:3.125rem; letter-spacing:0;}
 
+/* Product MD PICK Slider Style */
+.product .product-preview{width:100%; height:auto; margin-top:3rem;}
+.product .swiper-contents{display:flex; width:100%; height:auto; margin:auto; padding:1.5rem; margin-top:1.5rem; background:#efefef; column-gap: 0.5rem;}
+.product .swiper-image-wrapper{width:40%; border:1px solid var(--color-pt); padding:0.5rem; box-shadow:1px 3px 13px #bbb; overflow:hidden;}
+.product .swiper{overflow:hidden;}
+.product .swiper img{width:100%;}
+
+.product .swiper-text-wrapper{width:60%; display:flex; background:#fff; box-shadow:1px 3px 13px #bbb; padding:0 3rem; justify-content: center; flex-direction: column; border:1px solid var(--color-pt);}
+.product .text-contents{display:none; flex-direction: column; transform:translateY(40px); opacity:0;}
+.product .text-contents.active{display:flex; animation:slide-up 1s 1; animation-fill-mode: forwards; animation-delay:0.5s;}
+
+.product .text-contents h3{color:#333; font-size:1.875rem; font-family:var(--ff-kr-serif); line-height:2.5rem; letter-spacing:-.7px; margin:var(--el-medium) 0;}
+.product .text-contents p{font-size:1rem; color:var(--color-pt); line-height:1.25rem;}
+.product .text-contents i{display:block; margin:var(--el-small) 0; font-size:1rem; color:#999;}
+.product .text-contents em{display:-webkit-box; text-overflow:ellipsis; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-break: keep-all; overflow:hidden; font-size:1rem; color:#666; line-height: 1.625rem;}
+.product .text-contents strong{font-weight:500; line-height:1.875rem; color:#333; font-size:1.25rem; font-family: var(--ff-kr-serif); margin-top:var(--el-medium);}
+
+.product .preview-swiper{display:flex; align-items: center; column-gap: 1rem;}
+.product .preview-swiper .btn{width:30px; height:30px; background:var(--color-pt); color:#fff; font-size:1.25rem; display:flex; align-items: center; justify-content: center;}
+
 .product .product-lists{width:100%; height:auto; padding:1.5rem 0; display:flex; flex-wrap:wrap; gap:1rem;}
 .product .product-content{width:calc(33.33% - 0.666rem); padding:1rem; box-shadow:0 0 1px 1px #eee;}
 .product .product-content .product-image{width:100%; overflow:hidden; display:flex; align-items: center; justify-content: center; position:relative;}
@@ -21,30 +41,6 @@
 .product .product-info .item-price{font-size:2rem; font-weight:500; color:#333;}
 .product .product-info .item-price span{font-size:1.25rem; font-weight:400; font-family:var(--ff-kr-serif);}
 
-
-/* Product MD PICK Slider Style */
-.product .product-preview{
-      width: 100%;
-      height: auto;
-      margin-top: 3rem;
-}
-.product .more-lists{
-      width: 100%;
-      height: auto;
-      margin-top: 3rem;
-      display: flex;
-      justify-content: center;
-
-}
-.product .more-lists button{
-      background: var(--color-pt);
-      color: #fff;
-      font-size: 1rem;
-      border: 1px solid var(--color-pt);
-      padding: .875rem 4rem;
-      transition: all .4s;
-}
-.product .more-lists button:hover{
-      background: #fff;
-      color: var(--color-pt);
-}
+.product .more-lists{width:100%; height:auto; margin-top:3rem; display:flex; justify-content: center;}
+.product .more-lists button{background:var(--color-pt); color:#fff; font-size:1rem; border:1px solid var(--color-pt); padding:.875rem 4rem; transition:all .4s;}
+.product .more-lists button:hover{background:#fff; color:var(--color-pt);}

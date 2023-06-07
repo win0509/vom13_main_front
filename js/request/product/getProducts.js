@@ -9,7 +9,7 @@ async function getMainProducts(sortBy, selector, limit) {
 
   try {
     const data = await getRequest(getProductUrl);
-    // console.log(data);
+    console.log(data);
     const artLists = document.querySelector(selector);
     let artList = "";
 
@@ -32,7 +32,7 @@ async function getMainProducts(sortBy, selector, limit) {
                 ? `
                 <div class='view-more-box'>
                   <div class='more-btn'>
-                    <a href='/baexang_front/pages/detail.html?pid=${artInfo.pr_ID}&cate=${artInfo.pr_type}'>
+                    <a href="/baexang_front/pages/detail.html?pid=${artInfo.pr_ID}&cate=${artInfo.pr_type}">
                       <svg height='45' width='160'>
                         <rect height='45' width='160' />
                       </svg>
