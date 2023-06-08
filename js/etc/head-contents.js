@@ -11,10 +11,7 @@ if (pageURL.includes("index")) {
 } else if (pageURL.includes("admin")) {
   pageName = "admin";
 } else if (
-  // pageURL.includes("best") ||
-  // pageURL.includes("new") ||
-  // pageURL.includes("pp") ||
-  pageURL.includes("product")
+  pageURL.includes("product") || pageURL.includes("cart")
 ) {
   pageName = "sub-page";
 } else if (pageURL.includes("detail")) {
