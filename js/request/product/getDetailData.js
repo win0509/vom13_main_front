@@ -22,6 +22,16 @@ const itemCount = document.querySelector('.counting .count').textContent;
 const itemSize1 = document.querySelector('#cart-size-1');
 const itemSize2 = document.querySelector('#cart-size-2');
 
+const wrapTitle = document.querySelector('.detail .section-title');
+const wrapWtKr = document.querySelector('.detail .title-desc');
+const infoImage = document.querySelector('.detail-info-image img');
+const infoTitle = document.querySelector('.info-title .tit');
+const wtEn = document.querySelector('.info-title .en');
+const wtKr = document.querySelector('.info-title .kr');
+const infoDesc = document.querySelector('.info-desc');
+
+
+
 
 async function getDetailData() {
   const getDetailUrl =
@@ -61,9 +71,19 @@ async function getDetailData() {
     itemCountTitle.textContent = data[0].pr_ttl;
     itemPrice.forEach((price) => {
       price.textContent = Number(data[0].pr_pri).toLocaleString();
-
-     
     });
+
+    wrapTitle.textContent = data[0].pr_ttl;
+    wrapWtKr.textContent = data[0].pr_wt_kr;
+    infoImage.setAttribute('src', data[0].pr_img);
+    infoTitle.textContent = data[0].pr_ttl;
+    wtEn.textContent = data[0].pr_wt_en;
+    wtKr.textContent = data[0].pr_wt_kr;
+    // infoDesc.textContent = data[0].pr_desc;
+    infoDesc.insertAdjacentHTML('beforeend', data[0].pr_desc);
+
+
+
 
     const inputCountElmt = document.querySelector('.cart_count');
     const inputPriceElmt = document.querySelector('.cart_pri');

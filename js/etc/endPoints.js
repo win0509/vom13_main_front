@@ -21,7 +21,9 @@ var endPoints = {
     addCart: `https://${domain}/baexang_back/cart/add_cart`,
     getCart: `https://${domain}/baexang_back/cart/get_cart`,
     delCart: `https://${domain}/baexang_back/cart/del_cart`,
-  
+  },
+  comment : {
+    insertCmt: `https://${domain}/baexang_back/comment/insert_cmt`,
 
   }
 };
