@@ -296,9 +296,16 @@
 
   <script>
     window.addEventListener('load', function(){;
-      if(urlPath === `https://${domain}/baexang_front/`){
-        location.href = `https://${domain}/baexang_front/index.html`;
+      let protocolName = '';
+      if(navigator.userAgent.toLocaleLowerCase().indexOf('chrome')){
+         protocolName = 'https';
+      }else{
+         protocolName = 'http';
       }
+      // console.log(navigator.userAgent.toLocaleLowerCase());
+      if(urlPath === `${domain}/baexang_front/`){
+        location.href = `${protocolName}://${domain}/baexang_front/index.html`;
+      } 
     });
   </script>
   

@@ -1,6 +1,5 @@
 window.addEventListener("load", function () {
   getPickData();
-  // console.log(endPoints);
 });
 
 async function getPickData() {
@@ -9,7 +8,6 @@ async function getPickData() {
 
   try {
     const data = await getRequest(getPickUrl);
-    // console.log(data);
     const pickImgLists = document.querySelector(
       ".product-preview .swiper-wrapper"
     );

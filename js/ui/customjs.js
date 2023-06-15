@@ -121,7 +121,6 @@ setTimeout(() => {
     const contentsNumber = $(".swiper-contents .text-contents");
     const slideCount = $(".swiper-contents .swiper-slide").length;
     const num = $(".swiper-text-wrapper .num");
-    console.log(slideCount);
     const productSwiper = new Swiper(".product .swiper", {
       slidesPerView: 1,
       loop: true,
