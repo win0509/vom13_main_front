@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
-
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1,user-scalable=no">
   <!-- Favicon -->
   <link rel="shortcut icon" href="/baexang_front/images/icon/favicon.ico">
   <title>백상 || 로그인</title>
-
+  <style>
+    .preloader{position:fixed; background:#fff; width:100%; height:100vh; left:0; top:0; z-index:9999; display:flex; align-items: center; justify-content: center;}
+  </style>
   <!-- Plugin CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -43,6 +44,10 @@
 
     <!-- Footer -->
     <div id="footer-wrapper"></div>
+  </div>
+
+  <div class="preloader js-preloader">
+    <div class="loader"></div>
   </div>
   <!-- jQuery CDN Link -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>

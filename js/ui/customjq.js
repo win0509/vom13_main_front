@@ -160,7 +160,7 @@ $(function () {
 
     // const imageHeight = $(".best .best-image img").height();
     // $(".view-more-box").height(imageHeight * 0.8);
-  }, 2000);
+  }, 1200);
 
   /*-------- GO TO TOP --------*/
   $(window).on("scroll", function () {
@@ -190,7 +190,7 @@ $(function () {
   if (isPreloader.length > 0) {
     // (isPreloader !== null)
     $(".js-preloader").preloadinator({
-      minTime: 1000,
+      minTime: 1500,
       animation: "fadeOut",
       animationDuration: 400,
     });

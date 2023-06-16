@@ -35,7 +35,7 @@ for (let i = 0; i < cssFileNames.length; i++) {
 }
 
 /* ----- Custom JS Files ----- */
-const jsFileNames = ["customjs", "customjq"];
+const jsFileNames = ["customjs", "customjq", "jquery.preloadinator.min"];
 
 for (let i = 0; i < jsFileNames.length; i++) {
   const jsFile = document.createElement("script");
